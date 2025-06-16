@@ -31,6 +31,11 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   ui.draw(); // Draw the UI on the display
+  if (digitalRead(16) == LOW) { // Check if button on pin 16 is pressed
+    ui.currentPage = home; // Switch to home page
+  } else if (digitalRead(17) == LOW) { // Check if button on pin 17 is pressed
+    ui.currentPage = settings; // Switch to settings page
+  }
   
   
   delay(10);
